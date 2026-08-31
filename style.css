@@ -1,15 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 
+/* =========================
+   VARIABLES
+========================= */
+
 :root {
+
     --bg: #080a0f;
+
     --bg-soft: #0d1016;
+
     --card: #121720;
 
     --text: #f5f6f8;
+
     --muted: #8c93a0;
 
     --red: #d8323a;
+
     --red-light: #ff5258;
 
     --gold: #d6a94a;
@@ -19,32 +28,50 @@
     --border: rgba(255,255,255,0.08);
 
     --max-width: 1180px;
+
 }
 
 
+/* =========================
+   RESET
+========================= */
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 
 html {
+
     scroll-behavior: smooth;
+
 }
 
 
 body {
+
     background: var(--bg);
+
     color: var(--text);
 
-    font-family: 'Inter', Arial, sans-serif;
+    font-family:
+        'Inter',
+        Arial,
+        sans-serif;
 
     overflow-x: hidden;
+
 }
 
 
 body::before {
+
     content: "";
 
     position: fixed;
@@ -56,32 +83,41 @@ body::before {
     z-index: -1;
 
     background:
+
         radial-gradient(
             circle at 75% 15%,
-            rgba(216, 50, 58, 0.13),
+            rgba(216,50,58,0.13),
             transparent 30%
         ),
+
         radial-gradient(
             circle at 10% 60%,
-            rgba(214, 169, 74, 0.05),
+            rgba(214,169,74,0.05),
             transparent 25%
         );
+
 }
 
 
 a {
+
     color: inherit;
+
     text-decoration: none;
+
 }
 
 
 .container {
-    width: min(
-        calc(100% - 48px),
-        var(--max-width)
-    );
+
+    width:
+        min(
+            calc(100% - 48px),
+            var(--max-width)
+        );
 
     margin: auto;
+
 }
 
 
@@ -90,14 +126,17 @@ a {
 ========================= */
 
 .navbar {
+
     height: 82px;
 
     border-bottom:
         1px solid var(--border);
+
 }
 
 
 .nav-inner {
+
     height: 100%;
 
     display: flex;
@@ -105,10 +144,12 @@ a {
     align-items: center;
 
     justify-content: space-between;
+
 }
 
 
 .logo {
+
     display: flex;
 
     align-items: center;
@@ -120,20 +161,25 @@ a {
     font-weight: 800;
 
     letter-spacing: -0.04em;
+
 }
 
 
 .logo img {
+
     width: 36px;
+
     height: 36px;
 
     object-fit: contain;
 
     border-radius: 9px;
+
 }
 
 
 nav {
+
     display: flex;
 
     align-items: center;
@@ -143,21 +189,29 @@ nav {
     color: #9da3ae;
 
     font-size: 13px;
+
 }
 
 
 nav a {
-    transition: 0.2s;
+
+    transition:
+        color 0.2s ease;
+
 }
 
 
 nav a:hover {
+
     color: white;
+
 }
 
 
 .nav-download {
-    padding: 10px 16px;
+
+    padding:
+        10px 16px;
 
     border:
         1px solid var(--border);
@@ -165,6 +219,7 @@ nav a:hover {
     border-radius: 9px;
 
     color: white;
+
 }
 
 
@@ -173,28 +228,35 @@ nav a:hover {
 ========================= */
 
 .hero {
+
     min-height: 690px;
 
     display: flex;
 
     align-items: center;
+
 }
 
 
 .hero-grid {
+
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     align-items: center;
 
     gap: 40px;
 
-    padding: 80px 0;
+    padding:
+        80px 0;
+
 }
 
 
 .eyebrow {
+
     display: flex;
 
     align-items: center;
@@ -208,50 +270,71 @@ nav a:hover {
     font-weight: 800;
 
     letter-spacing: 0.18em;
+
 }
 
 
 .eyebrow span {
+
     width: 23px;
+
     height: 2px;
 
-    background: var(--red);
+    background:
+        var(--red);
+
 }
 
 
 .hero h1 {
-    margin: 25px 0;
+
+    margin:
+        25px 0;
 
     font-size:
-        clamp(58px, 7vw, 94px);
+        clamp(
+            58px,
+            7vw,
+            94px
+        );
 
     line-height: 0.92;
 
-    letter-spacing: -0.075em;
+    letter-spacing:
+        -0.075em;
+
 }
 
 
 .hero h1 em,
 .section-title h2 em,
 .download-box h2 em {
-    color: var(--red-light);
 
-    font-style: normal;
+    color:
+        var(--red-light);
+
+    font-style:
+        normal;
+
 }
 
 
 .hero-content > p {
+
     max-width: 530px;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
     font-size: 16px;
 
     line-height: 1.8;
+
 }
 
 
 .hero-buttons {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -259,10 +342,12 @@ nav a:hover {
     gap: 12px;
 
     margin-top: 30px;
+
 }
 
 
 .button {
+
     display: inline-flex;
 
     align-items: center;
@@ -271,7 +356,8 @@ nav a:hover {
 
     gap: 22px;
 
-    padding: 15px 19px;
+    padding:
+        15px 19px;
 
     border-radius: 10px;
 
@@ -280,66 +366,87 @@ nav a:hover {
     font-weight: 700;
 
     transition:
-        transform 0.2s,
-        background 0.2s;
+        transform 0.2s ease,
+        background 0.2s ease;
+
 }
 
 
 .button:hover {
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
+
 }
 
 
 .primary {
-    background: var(--red);
+
+    background:
+        var(--red);
 
     box-shadow:
         0 12px 35px
         rgba(216,50,58,0.2);
+
 }
 
 
 .primary:hover {
-    background: var(--red-light);
+
+    background:
+        var(--red-light);
+
 }
 
 
 .secondary {
+
     border:
         1px solid var(--border);
 
-    color: #d8dae0;
+    color:
+        #d8dae0;
+
 }
 
 
 .availability {
+
     margin-top: 15px;
 
-    color: #626875;
+    color:
+        #626875;
 
     font-size: 10px;
+
 }
 
 
 .availability span {
+
     display: inline-block;
 
     width: 6px;
+
     height: 6px;
 
     margin-right: 7px;
 
     border-radius: 50%;
 
-    background: var(--green);
+    background:
+        var(--green);
+
 }
 
 
 /* =========================
-   PHONE MOCKUP
+   HERO PHONES
 ========================= */
 
 .hero-app {
+
     height: 550px;
 
     position: relative;
@@ -349,13 +456,16 @@ nav a:hover {
     align-items: center;
 
     justify-content: center;
+
 }
 
 
 .app-glow {
+
     position: absolute;
 
     width: 390px;
+
     height: 390px;
 
     border-radius: 50%;
@@ -363,21 +473,26 @@ nav a:hover {
     background:
         rgba(190,31,40,0.17);
 
-    filter: blur(70px);
+    filter:
+        blur(70px);
+
 }
 
 
 .phone {
+
     position: absolute;
 
     width: 245px;
+
     height: 500px;
 
     border-radius: 34px;
 
     overflow: hidden;
 
-    background: #06070a;
+    background:
+        #06070a;
 
     border:
         8px solid #20232b;
@@ -385,67 +500,86 @@ nav a:hover {
     box-shadow:
         0 35px 90px
         rgba(0,0,0,0.65);
+
 }
 
 
 .phone img {
+
     width: 100%;
+
     height: 100%;
+
     display: block;
+
     object-fit: contain;
-    background: #080a0f;
+
+    background:
+        #080a0f;
 
 }
 
 
 .phone-back {
+
     transform:
         translate(-95px,-10px)
         rotate(-8deg);
 
     opacity: 0.72;
+
 }
 
 
 .phone-front {
+
     transform:
         translate(55px,15px)
         rotate(5deg);
 
     z-index: 2;
+
 }
 
 
 .phone-notch {
+
     position: absolute;
 
     top: 7px;
+
     left: 50%;
 
     transform:
         translateX(-50%);
 
     width: 80px;
+
     height: 20px;
 
-    background: #050609;
+    background:
+        #050609;
 
     border-radius:
         0 0 14px 14px;
 
     z-index: 5;
+
 }
 
 
 .score-card {
+
     position: absolute;
 
     right: 0;
+
     bottom: 35px;
 
     z-index: 5;
 
-    padding: 15px 18px;
+    padding:
+        15px 18px;
 
     border:
         1px solid var(--border);
@@ -461,33 +595,44 @@ nav a:hover {
     box-shadow:
         0 18px 50px
         rgba(0,0,0,0.4);
+
 }
 
 
 .score-card span {
+
     display: block;
 
-    color: #747a86;
+    color:
+        #747a86;
 
     font-size: 8px;
 
-    letter-spacing: 0.14em;
+    letter-spacing:
+        0.14em;
+
 }
 
 
 .score-card strong {
+
     display: block;
 
-    margin: 3px 0;
+    margin:
+        3px 0;
 
     font-size: 31px;
+
 }
 
 
 .score-card small {
-    color: var(--green);
+
+    color:
+        var(--green);
 
     font-size: 10px;
+
 }
 
 
@@ -496,6 +641,7 @@ nav a:hover {
 ========================= */
 
 .ticker {
+
     overflow: hidden;
 
     border-top:
@@ -504,11 +650,14 @@ nav a:hover {
     border-bottom:
         1px solid var(--border);
 
-    background: #0b0d12;
+    background:
+        #0b0d12;
+
 }
 
 
 .ticker-content {
+
     min-height: 55px;
 
     display: flex;
@@ -519,57 +668,84 @@ nav a:hover {
 
     gap: 27px;
 
-    color: #777d88;
+    color:
+        #777d88;
 
     font-size: 9px;
 
     font-weight: 800;
 
-    letter-spacing: 0.2em;
+    letter-spacing:
+        0.2em;
 
-    white-space: nowrap;
+    white-space:
+        nowrap;
+
 }
 
 
 .ticker-content b {
-    color: var(--gold);
+
+    color:
+        var(--gold);
+
 }
 
 
 /* =========================
-   SECTIONS
+   GENERAL SECTIONS
 ========================= */
 
 .section {
-    padding: 120px 0;
+
+    padding:
+        120px 0;
+
 }
 
 
 .section-title {
+
     max-width: 680px;
 
-    margin-bottom: 45px;
+    margin-bottom:
+        45px;
+
 }
 
 
 .section-title h2 {
-    margin: 15px 0;
+
+    margin:
+        15px 0;
 
     font-size:
-        clamp(40px,5vw,62px);
+        clamp(
+            40px,
+            5vw,
+            62px
+        );
 
-    line-height: 0.95;
+    line-height:
+        0.95;
 
-    letter-spacing: -0.065em;
+    letter-spacing:
+        -0.065em;
+
 }
 
 
 .section-title p {
-    color: var(--muted);
 
-    line-height: 1.7;
+    color:
+        var(--muted);
 
-    font-size: 15px;
+    line-height:
+        1.7;
+
+    font-size:
+        15px;
+
 }
 
 
@@ -578,28 +754,37 @@ nav a:hover {
 ========================= */
 
 .features-grid {
+
     display: grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap: 14px;
+    gap:
+        14px;
+
 }
 
 
 .feature-card {
-    min-height: 250px;
 
-    position: relative;
+    min-height:
+        250px;
 
-    padding: 30px;
+    position:
+        relative;
 
-    overflow: hidden;
+    padding:
+        30px;
+
+    overflow:
+        hidden;
 
     border:
         1px solid var(--border);
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
     background:
         linear-gradient(
@@ -607,82 +792,123 @@ nav a:hover {
             rgba(255,255,255,0.035),
             rgba(255,255,255,0.01)
         );
+
 }
 
 
 .large-card {
+
     background:
         linear-gradient(
             145deg,
             rgba(216,50,58,0.11),
             rgba(255,255,255,0.01)
         );
+
 }
 
 
 .feature-icon {
-    margin-bottom: 45px;
 
-    color: var(--gold);
+    margin-bottom:
+        45px;
 
-    font-size: 22px;
+    color:
+        var(--gold);
+
+    font-size:
+        22px;
+
 }
 
 
 .feature-card h3 {
-    margin-bottom: 10px;
 
-    font-size: 19px;
+    margin-bottom:
+        10px;
+
+    font-size:
+        19px;
+
 }
 
 
 .feature-card p {
-    max-width: 450px;
 
-    color: var(--muted);
+    max-width:
+        450px;
 
-    font-size: 13px;
+    color:
+        var(--muted);
 
-    line-height: 1.7;
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
 }
 
 
 .chart {
-    position: absolute;
 
-    right: 28px;
-    bottom: 28px;
+    position:
+        absolute;
 
-    height: 70px;
+    right:
+        28px;
 
-    display: flex;
+    bottom:
+        28px;
 
-    align-items: end;
+    height:
+        70px;
 
-    gap: 7px;
+    display:
+        flex;
+
+    align-items:
+        end;
+
+    gap:
+        7px;
+
 }
 
 
 .chart i {
-    width: 10px;
+
+    width:
+        10px;
 
     border-radius:
         4px 4px 0 0;
 
-    background: var(--red);
+    background:
+        var(--red);
 
-    opacity: 0.7;
+    opacity:
+        0.7;
+
 }
 
 
 .red-line {
-    position: absolute;
 
-    left: 30px;
-    bottom: 30px;
+    position:
+        absolute;
 
-    width: 45%;
-    height: 2px;
+    left:
+        30px;
+
+    bottom:
+        30px;
+
+    width:
+        45%;
+
+    height:
+        2px;
 
     background:
         linear-gradient(
@@ -690,33 +916,50 @@ nav a:hover {
             var(--red),
             transparent
         );
+
 }
 
 
 .growth {
-    position: absolute;
 
-    right: 28px;
-    bottom: 25px;
+    position:
+        absolute;
 
-    color: var(--green);
+    right:
+        28px;
 
-    font-size: 27px;
+    bottom:
+        25px;
 
-    font-weight: 800;
+    color:
+        var(--green);
+
+    font-size:
+        27px;
+
+    font-weight:
+        800;
+
 }
 
 
 .growth small {
-    display: block;
 
-    color: #707681;
+    display:
+        block;
 
-    text-align: right;
+    color:
+        #707681;
 
-    font-size: 8px;
+    text-align:
+        right;
 
-    font-weight: 500;
+    font-size:
+        8px;
+
+    font-weight:
+        500;
+
 }
 
 
@@ -725,7 +968,9 @@ nav a:hover {
 ========================= */
 
 .screens-section {
-    padding: 110px 0;
+
+    padding:
+        110px 0;
 
     background:
         linear-gradient(
@@ -739,48 +984,79 @@ nav a:hover {
 
     border-bottom:
         1px solid var(--border);
+
 }
 
 
 .screens-grid {
-    display: grid;
+
+    display:
+        grid;
 
     grid-template-columns:
-        1.2fr
-        1fr
-        1fr;
+        repeat(4, 1fr);
 
-    grid-template-rows:
-        260px 260px;
+    align-items:
+        start;
 
-    gap: 15px;
+    gap:
+        18px;
+
 }
 
 
 .screen {
-    padding: 13px;
+
+    padding:
+        10px;
 
     border:
         1px solid var(--border);
 
-    border-radius: 19px;
+    border-radius:
+        18px;
 
-    background: #0f1117;
+    background:
+        #0f1117;
+
+    overflow:
+        hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+
 }
 
 
-.screen-big {
-    grid-row: span 2;
+.screen:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(216,50,58,0.35);
+
 }
 
 
 .screen img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: contain;
-    background: #080a0f;
-    border-radius: 13px;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    display:
+        block;
+
+    object-fit:
+        contain;
+
+    border-radius:
+        11px;
+
 }
 
 
@@ -789,25 +1065,35 @@ nav a:hover {
 ========================= */
 
 .download-section {
-    padding: 110px 0;
+
+    padding:
+        110px 0;
+
 }
 
 
 .download-box {
-    display: flex;
 
-    align-items: center;
+    display:
+        flex;
 
-    justify-content: space-between;
+    align-items:
+        center;
 
-    gap: 40px;
+    justify-content:
+        space-between;
 
-    padding: 55px;
+    gap:
+        40px;
+
+    padding:
+        55px;
 
     border:
         1px solid var(--border);
 
-    border-radius: 24px;
+    border-radius:
+        24px;
 
     background:
         radial-gradient(
@@ -816,36 +1102,56 @@ nav a:hover {
             transparent 35%
         ),
         #101219;
+
 }
 
 
 .download-box h2 {
-    margin-top: 16px;
+
+    margin-top:
+        16px;
 
     font-size:
-        clamp(40px,5vw,60px);
+        clamp(
+            40px,
+            5vw,
+            60px
+        );
 
-    line-height: 0.95;
+    line-height:
+        0.95;
 
-    letter-spacing: -0.06em;
+    letter-spacing:
+        -0.06em;
+
 }
 
 
 .download-box p {
-    max-width: 500px;
 
-    margin-top: 18px;
+    max-width:
+        500px;
 
-    color: var(--muted);
+    margin-top:
+        18px;
 
-    font-size: 13px;
+    color:
+        var(--muted);
 
-    line-height: 1.7;
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
 }
 
 
 .download-button {
-    white-space: nowrap;
+
+    white-space:
+        nowrap;
+
 }
 
 
@@ -854,23 +1160,49 @@ nav a:hover {
 ========================= */
 
 footer {
+
     border-top:
         1px solid var(--border);
+
 }
 
 
 .footer-inner {
-    min-height: 90px;
 
-    display: flex;
+    min-height:
+        90px;
 
-    align-items: center;
+    display:
+        flex;
 
-    justify-content: space-between;
+    align-items:
+        center;
 
-    color: #626875;
+    justify-content:
+        space-between;
 
-    font-size: 10px;
+    color:
+        #626875;
+
+    font-size:
+        10px;
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .screens-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
 }
 
 
@@ -881,114 +1213,173 @@ footer {
 @media (max-width: 850px) {
 
     .container {
+
         width:
             min(
                 calc(100% - 30px),
                 var(--max-width)
             );
+
     }
 
 
     .hero-grid {
-        grid-template-columns: 1fr;
 
-        padding: 65px 0;
+        grid-template-columns:
+            1fr;
+
+        padding:
+            65px 0;
+
     }
 
 
     .hero-app {
-        height: 500px;
 
-        margin-top: 20px;
+        height:
+            500px;
+
+        margin-top:
+            20px;
+
     }
 
 
     .features-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
 
     .screens-grid {
-        grid-template-columns: 1fr;
 
-        grid-template-rows:
-            500px
-            350px
-            350px
-            350px;
-    }
+        grid-template-columns:
+            repeat(2, 1fr);
 
+        gap:
+            14px;
 
-    .screen-big {
-        grid-row: auto;
     }
 
 
     .download-box {
-        flex-direction: column;
 
-        align-items: flex-start;
+        flex-direction:
+            column;
 
-        padding: 35px;
+        align-items:
+            flex-start;
+
+        padding:
+            35px;
+
     }
 
 
     nav a:not(.nav-download) {
-        display: none;
+
+        display:
+            none;
+
     }
+
 }
 
+
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media (max-width: 520px) {
 
     .hero h1 {
-        font-size: 56px;
+
+        font-size:
+            56px;
+
     }
 
 
     .phone {
-        width: 205px;
-        height: 430px;
+
+        width:
+            205px;
+
+        height:
+            430px;
+
     }
 
 
     .phone-back {
+
         transform:
             translate(-55px,-10px)
             rotate(-7deg);
+
     }
 
 
     .phone-front {
+
         transform:
             translate(45px,15px)
             rotate(5deg);
+
     }
 
 
     .hero-app {
-        height: 450px;
+
+        height:
+            450px;
+
     }
 
 
     .score-card {
-        right: 0;
-        bottom: 20px;
+
+        right:
+            0;
+
+        bottom:
+            20px;
+
     }
 
 
     .section {
-        padding: 85px 0;
+
+        padding:
+            85px 0;
+
+    }
+
+
+    .screens-grid {
+
+        grid-template-columns:
+            1fr;
+
     }
 
 
     .footer-inner {
-        flex-direction: column;
 
-        justify-content: center;
+        flex-direction:
+            column;
 
-        gap: 15px;
+        justify-content:
+            center;
 
-        padding: 25px 0;
+        gap:
+            15px;
+
+        padding:
+            25px 0;
+
     }
+
 }
