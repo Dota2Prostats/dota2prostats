@@ -1,601 +1,1561 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+@import url(
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap'
+);
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
 
-    <title>Dota2ProStats — Track. Analyze. Improve.</title>
+/* ========================================
+   VARIABLES
+======================================== */
 
-    <meta
-        name="description"
-        content="Dota2ProStats — Track your Dota 2 matches, understand your performance and improve your game."
-    >
+:root {
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    --bg: #080a0f;
 
+    --bg-soft: #0c0f14;
 
-<body>
+    --card: #10131a;
 
+    --text: #f4f5f7;
 
-<!-- ========================================
-     NAVBAR
-======================================== -->
+    --muted: #8b929f;
 
-<header class="navbar">
+    --red: #d8323a;
 
-    <div class="container nav-inner">
+    --red-light: #ff555b;
 
-        <a href="#" class="logo">
+    --gold: #d6a94a;
 
-            <img
-                src="logo.png"
-                alt="Dota2ProStats"
-            >
+    --green: #51d58a;
 
-            <span>Dota2ProStats</span>
+    --border: rgba(255,255,255,0.08);
 
-        </a>
+    --max-width: 1180px;
 
+}
 
-        <nav>
 
-            <a href="#features">
-                Features
-            </a>
+/* ========================================
+   RESET
+======================================== */
 
-            <a href="#screens">
-                Screens
-            </a>
+* {
 
-            <a
-                href="#download"
-                class="nav-download"
-            >
-                Download
-            </a>
+    margin: 0;
 
-        </nav>
+    padding: 0;
 
-    </div>
+    box-sizing: border-box;
 
-</header>
+}
 
 
+html {
 
-<main>
+    scroll-behavior: smooth;
 
+}
 
-<!-- ========================================
-     HERO
-======================================== -->
 
-<section class="hero">
+body {
 
-    <div class="container hero-grid">
+    background:
+        var(--bg);
 
+    color:
+        var(--text);
 
-        <!-- HERO TEXT -->
+    font-family:
+        'Inter',
+        Arial,
+        sans-serif;
 
-        <div class="hero-content">
+    overflow-x:
+        hidden;
 
-            <div class="eyebrow">
+}
 
-                <span></span>
 
-                DOTA 2 PERFORMANCE TRACKER
+body::before {
 
-            </div>
+    content: "";
 
+    position:
+        fixed;
 
-            <h1>
+    inset:
+        0;
 
-                Your game.<br>
+    pointer-events:
+        none;
 
-                <em>Understood.</em>
+    z-index:
+        -1;
 
-            </h1>
+    background:
 
+        radial-gradient(
+            circle at 78% 12%,
+            rgba(216,50,58,0.12),
+            transparent 28%
+        ),
 
-            <p>
+        radial-gradient(
+            circle at 8% 55%,
+            rgba(214,169,74,0.04),
+            transparent 25%
+        );
 
-                Track your matches, explore your performance
-                and discover what is really happening
-                in your Dota 2 games.
+}
 
-            </p>
 
+a {
 
-            <div class="hero-buttons">
+    color:
+        inherit;
 
-                <a
-                    href="#download"
-                    class="button primary"
-                >
+    text-decoration:
+        none;
 
-                    Download for Android
+}
 
-                    <span>↓</span>
 
-                </a>
+.container {
 
+    width:
+        min(
+            calc(100% - 48px),
+            var(--max-width)
+        );
 
-                <a
-                    href="#features"
-                    class="button secondary"
-                >
+    margin:
+        0 auto;
 
-                    Explore features
+}
 
-                </a>
 
-            </div>
+/* ========================================
+   NAVBAR
+======================================== */
 
+.navbar {
 
-            <div class="availability">
+    height:
+        82px;
 
-                <span></span>
+    border-bottom:
+        1px solid var(--border);
 
-                Free to download · Android
+}
 
-            </div>
 
-        </div>
+.nav-inner {
 
+    height:
+        100%;
 
+    display:
+        flex;
 
-        <!-- HERO APP PREVIEW -->
+    align-items:
+        center;
 
-        <div class="hero-app">
+    justify-content:
+        space-between;
 
-            <div class="app-glow"></div>
+}
 
 
-            <div class="phone phone-back">
+.logo {
 
-                <img
-                    src="home.jpg"
-                    alt="Dota2ProStats Home Screen"
-                >
+    display:
+        flex;
 
-            </div>
+    align-items:
+        center;
 
+    gap:
+        10px;
 
-            <div class="phone phone-front">
+    font-size:
+        16px;
 
-                <div class="phone-notch"></div>
+    font-weight:
+        800;
 
-                <img
-                    src="matchs.jpg"
-                    alt="Dota2ProStats Match History"
-                >
+    letter-spacing:
+        -0.04em;
 
-            </div>
+}
 
 
-            <div class="score-card">
+.logo img {
 
-                <span>
-                    PROSTATS SCORE
-                </span>
+    width:
+        36px;
 
-                <strong>
-                    842
-                </strong>
+    height:
+        36px;
 
-                <small>
-                    +18 this week
-                </small>
+    object-fit:
+        contain;
 
-            </div>
+    border-radius:
+        9px;
 
-        </div>
+}
 
-    </div>
 
-</section>
+nav {
 
+    display:
+        flex;
 
+    align-items:
+        center;
 
-<!-- ========================================
-     TICKER
-======================================== -->
+    gap:
+        30px;
 
-<div class="ticker">
+    color:
+        #9da3ae;
 
-    <div class="ticker-content">
+    font-size:
+        13px;
 
-        <span>
-            TRACK YOUR MATCHES
-        </span>
+}
 
-        <b>✦</b>
 
-        <span>
-            UNDERSTAND YOUR PERFORMANCE
-        </span>
+nav a {
 
-        <b>✦</b>
+    transition:
+        color 0.2s ease;
 
-        <span>
-            IMPROVE YOUR GAME
-        </span>
+}
 
-        <b>✦</b>
 
-        <span>
-            TRACK YOUR MATCHES
-        </span>
+nav a:hover {
 
-    </div>
+    color:
+        white;
 
-</div>
+}
 
 
+.nav-download {
 
-<!-- ========================================
-     FEATURES
-======================================== -->
+    padding:
+        10px 16px;
 
-<section
-    id="features"
-    class="section"
->
+    border:
+        1px solid var(--border);
 
+    border-radius:
+        9px;
 
-    <div class="container">
+    color:
+        white;
 
+}
 
-        <div class="section-title">
 
+.nav-download:hover {
 
-            <div class="eyebrow">
+    border-color:
+        rgba(255,255,255,0.18);
 
-                <span></span>
+    background:
+        rgba(255,255,255,0.03);
 
-                BUILT FOR PLAYERS
+}
 
-            </div>
 
+/* ========================================
+   HERO
+======================================== */
 
-            <h2>
+.hero {
 
-                More than<br>
+    min-height:
+        690px;
 
-                <em>numbers.</em>
+    display:
+        flex;
 
-            </h2>
+    align-items:
+        center;
 
+}
 
-            <p>
 
-                Dota2ProStats turns your match history
-                into information you can actually use.
+.hero-grid {
 
-            </p>
+    display:
+        grid;
 
-        </div>
+    grid-template-columns:
+        1fr 1fr;
 
+    align-items:
+        center;
 
+    gap:
+        50px;
 
-        <!-- FEATURE CARDS -->
+    padding:
+        80px 0;
 
-        <div class="features-grid">
+}
 
 
-            <!-- CARD 1 -->
+.eyebrow {
 
-            <div class="feature-card">
+    display:
+        flex;
 
-                <div class="feature-info">
+    align-items:
+        center;
 
-                    <h3>
-                        Match Analytics
-                    </h3>
+    gap:
+        10px;
 
-                    <p>
-                        Review your match statistics
-                        and understand every game.
-                    </p>
+    color:
+        #9ba1ad;
 
-                </div>
+    font-size:
+        10px;
 
+    font-weight:
+        800;
 
-                <div class="feature-arrow">
-                    →
-                </div>
+    letter-spacing:
+        0.18em;
 
-            </div>
+}
 
 
+.eyebrow span {
 
-            <!-- CARD 2 -->
+    width:
+        23px;
 
-            <div class="feature-card">
+    height:
+        2px;
 
-                <div class="feature-info">
+    background:
+        var(--red);
 
-                    <h3>
-                        Hero Performance
-                    </h3>
+}
 
-                    <p>
-                        Discover your strongest heroes
-                        and most reliable picks.
-                    </p>
 
-                </div>
+.hero h1 {
 
+    margin:
+        25px 0;
 
-                <div class="feature-arrow">
-                    →
-                </div>
+    font-size:
+        clamp(
+            58px,
+            7vw,
+            94px
+        );
 
-            </div>
+    line-height:
+        0.92;
 
+    letter-spacing:
+        -0.075em;
 
+}
 
-            <!-- CARD 3 -->
 
-            <div class="feature-card">
+.hero h1 em,
+.section-title h2 em,
+.download-box h2 em {
 
-                <div class="feature-info">
+    color:
+        var(--red-light);
 
-                    <h3>
-                        Progress Tracking
-                    </h3>
+    font-style:
+        normal;
 
-                    <p>
-                        Follow your recent form and
-                        spot meaningful performance trends.
-                    </p>
+}
 
-                </div>
 
+.hero-content > p {
 
-                <div class="feature-arrow">
-                    →
-                </div>
+    max-width:
+        530px;
 
-            </div>
+    color:
+        var(--muted);
 
+    font-size:
+        16px;
 
+    line-height:
+        1.8;
 
-            <!-- CARD 4 -->
+}
 
-            <div class="feature-card">
 
-                <div class="feature-info">
+.hero-buttons {
 
-                    <h3>
-                        Match History
-                    </h3>
+    display:
+        flex;
 
-                    <p>
-                        Keep every game organized in
-                        one clean and easy-to-read timeline.
-                    </p>
+    flex-wrap:
+        wrap;
 
-                </div>
+    gap:
+        12px;
 
+    margin-top:
+        30px;
 
-                <div class="feature-arrow">
-                    →
-                </div>
+}
 
-            </div>
 
+.button {
 
-        </div>
+    display:
+        inline-flex;
 
-    </div>
+    align-items:
+        center;
 
-</section>
+    justify-content:
+        center;
 
+    gap:
+        22px;
 
+    padding:
+        15px 19px;
 
-<!-- ========================================
-     SCREENSHOTS
-======================================== -->
+    border-radius:
+        10px;
 
-<section
-    id="screens"
-    class="screens-section"
->
+    font-size:
+        13px;
 
+    font-weight:
+        700;
 
-    <div class="container">
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
 
+}
 
-        <div class="section-title">
 
-            <div class="eyebrow">
+.button:hover {
 
-                <span></span>
+    transform:
+        translateY(-2px);
 
-                INSIDE THE APP
+}
 
-            </div>
 
+.primary {
 
-            <h2>
+    background:
+        var(--red);
 
-                Designed around<br>
+    box-shadow:
+        0 12px 35px
+        rgba(216,50,58,0.2);
 
-                <em>the match.</em>
+}
 
-            </h2>
 
+.primary:hover {
 
-            <p>
+    background:
+        var(--red-light);
 
-                Everything you need to understand
-                your Dota 2 performance.
+}
 
-            </p>
 
-        </div>
+.secondary {
 
+    border:
+        1px solid var(--border);
 
+    color:
+        #d8dae0;
 
-        <div class="screens-grid">
+}
 
 
-            <div class="screen">
+.secondary:hover {
 
-                <img
-                    src="home.jpg"
-                    alt="Dota2ProStats Home"
-                >
+    background:
+        rgba(255,255,255,0.035);
 
-            </div>
+}
 
 
-            <div class="screen">
+.availability {
 
-                <img
-                    src="matchs.jpg"
-                    alt="Dota2ProStats Matches"
-                >
+    margin-top:
+        15px;
 
-            </div>
+    color:
+        #626875;
 
+    font-size:
+        10px;
 
-            <div class="screen">
+}
 
-                <img
-                    src="records.jpg"
-                    alt="Dota2ProStats Stats"
-                >
 
-            </div>
+.availability span {
 
+    display:
+        inline-block;
 
-            <div class="screen">
+    width:
+        6px;
 
-                <img
-                    src="weekly.jpg"
-                    alt="Dota2ProStats Weekly Recap"
-                >
+    height:
+        6px;
 
-            </div>
+    margin-right:
+        7px;
 
+    border-radius:
+        50%;
 
-        </div>
+    background:
+        var(--green);
 
-    </div>
+}
 
-</section>
 
+/* ========================================
+   HERO APP
+======================================== */
 
+.hero-app {
 
-<!-- ========================================
-     DOWNLOAD
-======================================== -->
+    height:
+        550px;
 
-<section
-    id="download"
-    class="download-section"
->
+    position:
+        relative;
 
+    display:
+        flex;
 
-    <div class="container">
+    align-items:
+        center;
 
+    justify-content:
+        center;
 
-        <div class="download-box">
+}
 
 
-            <div class="download-content">
+.app-glow {
 
+    position:
+        absolute;
 
-                <div class="eyebrow">
+    width:
+        390px;
 
-                    <span></span>
+    height:
+        390px;
 
-                    DOTA2PROSTATS
+    border-radius:
+        50%;
 
-                </div>
+    background:
+        rgba(190,31,40,0.17);
 
+    filter:
+        blur(70px);
 
-                <h2>
+}
 
-                    Know your game.<br>
 
-                    <em>Play better.</em>
+.phone {
 
-                </h2>
+    position:
+        absolute;
 
+    width:
+        245px;
 
-                <p>
+    height:
+        500px;
 
-                    Download Dota2ProStats for Android
-                    and start tracking your performance.
+    border-radius:
+        34px;
 
-                </p>
+    overflow:
+        hidden;
 
-            </div>
+    background:
+        #06070a;
 
+    border:
+        8px solid #20232b;
 
+    box-shadow:
+        0 35px 90px
+        rgba(0,0,0,0.65);
 
-            <a
-                href="#"
-                class="button primary download-button"
-            >
+}
 
-                Download APK
 
-                <span>↓</span>
+.phone img {
 
-            </a>
+    width:
+        100%;
 
+    height:
+        100%;
 
-        </div>
+    display:
+        block;
 
-    </div>
+    object-fit:
+        contain;
 
-</section>
+    background:
+        #080a0f;
 
+}
 
-</main>
 
+.phone-back {
 
+    transform:
+        translate(-95px,-10px)
+        rotate(-8deg);
 
-<!-- ========================================
-     FOOTER
-======================================== -->
+    opacity:
+        0.72;
 
-<footer>
+}
 
-    <div class="container footer-inner">
 
+.phone-front {
 
-        <div class="logo">
+    transform:
+        translate(55px,15px)
+        rotate(5deg);
 
-            <img
-                src="logo.png"
-                alt="Dota2ProStats"
-            >
+    z-index:
+        2;
 
-            <span>
-                Dota2ProStats
-            </span>
+}
 
-        </div>
 
+.phone-notch {
 
-        <span>
-            © 2026 Dota2ProStats
-        </span>
+    position:
+        absolute;
 
+    top:
+        7px;
 
-    </div>
+    left:
+        50%;
 
-</footer>
+    transform:
+        translateX(-50%);
 
+    width:
+        80px;
 
-</body>
-</html>
+    height:
+        20px;
+
+    background:
+        #050609;
+
+    border-radius:
+        0 0 14px 14px;
+
+    z-index:
+        5;
+
+}
+
+
+.score-card {
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    bottom:
+        35px;
+
+    z-index:
+        5;
+
+    padding:
+        15px 18px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(16,18,25,0.92);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 18px 50px
+        rgba(0,0,0,0.4);
+
+}
+
+
+.score-card span {
+
+    display:
+        block;
+
+    color:
+        #747a86;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        0.14em;
+
+}
+
+
+.score-card strong {
+
+    display:
+        block;
+
+    margin:
+        3px 0;
+
+    font-size:
+        31px;
+
+}
+
+
+.score-card small {
+
+    color:
+        var(--green);
+
+    font-size:
+        10px;
+
+}
+
+
+/* ========================================
+   TICKER
+======================================== */
+
+.ticker {
+
+    overflow:
+        hidden;
+
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
+
+    background:
+        #0b0d12;
+
+}
+
+
+.ticker-content {
+
+    min-height:
+        55px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        27px;
+
+    color:
+        #777d88;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.2em;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.ticker-content b {
+
+    color:
+        var(--gold);
+
+}
+
+
+/* ========================================
+   GENERAL SECTIONS
+======================================== */
+
+.section {
+
+    padding:
+        105px 0;
+
+}
+
+
+.section-title {
+
+    max-width:
+        680px;
+
+    margin-bottom:
+        42px;
+
+}
+
+
+.section-title h2 {
+
+    margin:
+        15px 0;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            62px
+        );
+
+    line-height:
+        0.95;
+
+    letter-spacing:
+        -0.065em;
+
+}
+
+
+.section-title p {
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.7;
+
+    font-size:
+        15px;
+
+}
+
+
+/* ========================================
+   FEATURES
+======================================== */
+
+.features-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        12px;
+
+}
+
+
+.feature-card {
+
+    min-height:
+        142px;
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        25px;
+
+    padding:
+        27px 30px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        15px;
+
+    background:
+        rgba(255,255,255,0.018);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+.feature-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(255,255,255,0.14);
+
+    background:
+        rgba(255,255,255,0.028);
+
+}
+
+
+.feature-card:first-child {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(216,50,58,0.075),
+            rgba(255,255,255,0.012)
+        );
+
+}
+
+
+.feature-info {
+
+    max-width:
+        420px;
+
+}
+
+
+.feature-info h3 {
+
+    margin-bottom:
+        8px;
+
+    color:
+        #f0f1f3;
+
+    font-size:
+        17px;
+
+    font-weight:
+        750;
+
+    letter-spacing:
+        -0.035em;
+
+}
+
+
+.feature-info p {
+
+    color:
+        #858c98;
+
+    font-size:
+        11.5px;
+
+    line-height:
+        1.65;
+
+}
+
+
+.feature-arrow {
+
+    flex-shrink:
+        0;
+
+    color:
+        #5c626d;
+
+    font-size:
+        20px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.feature-card:hover .feature-arrow {
+
+    color:
+        var(--red-light);
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* ========================================
+   SCREENSHOTS
+======================================== */
+
+.screens-section {
+
+    padding:
+        105px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0b0d12,
+            #090a0e
+        );
+
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.screens-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    align-items:
+        start;
+
+    gap:
+        16px;
+
+}
+
+
+.screen {
+
+    padding:
+        9px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        17px;
+
+    background:
+        #0f1117;
+
+    overflow:
+        hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+.screen:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(216,50,58,0.35);
+
+}
+
+
+.screen img {
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    display:
+        block;
+
+    object-fit:
+        contain;
+
+    border-radius:
+        10px;
+
+}
+
+
+/* ========================================
+   DOWNLOAD
+======================================== */
+
+.download-section {
+
+    padding:
+        105px 0;
+
+}
+
+
+.download-box {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        40px;
+
+    padding:
+        55px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        23px;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(216,50,58,0.13),
+            transparent 35%
+        ),
+
+        #101219;
+
+}
+
+
+.download-box h2 {
+
+    margin-top:
+        16px;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            60px
+        );
+
+    line-height:
+        0.95;
+
+    letter-spacing:
+        -0.06em;
+
+}
+
+
+.download-box p {
+
+    max-width:
+        500px;
+
+    margin-top:
+        18px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.download-button {
+
+    white-space:
+        nowrap;
+
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+.footer-inner {
+
+    min-height:
+        90px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    color:
+        #626875;
+
+    font-size:
+        10px;
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+
+    .hero-grid {
+
+        gap:
+            20px;
+
+    }
+
+
+    .screens-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 850px) {
+
+
+    .container {
+
+        width:
+            min(
+                calc(100% - 30px),
+                var(--max-width)
+            );
+
+    }
+
+
+    .hero {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .hero-grid {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            65px 0;
+
+    }
+
+
+    .hero-app {
+
+        height:
+            500px;
+
+        margin-top:
+            20px;
+
+    }
+
+
+    .features-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .download-box {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        padding:
+            40px 30px;
+
+    }
+
+
+    nav a:not(.nav-download) {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 520px) {
+
+
+    .container {
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    .navbar {
+
+        height:
+            70px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            56px;
+
+    }
+
+
+    .hero-content > p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .hero-app {
+
+        height:
+            440px;
+
+    }
+
+
+    .phone {
+
+        width:
+            200px;
+
+        height:
+            425px;
+
+    }
+
+
+    .phone-back {
+
+        transform:
+            translate(-52px,-10px)
+            rotate(-7deg);
+
+    }
+
+
+    .phone-front {
+
+        transform:
+            translate(43px,15px)
+            rotate(5deg);
+
+    }
+
+
+    .score-card {
+
+        right:
+            0;
+
+        bottom:
+            10px;
+
+    }
+
+
+    .section {
+
+        padding:
+            80px 0;
+
+    }
+
+
+    .section-title {
+
+        margin-bottom:
+            30px;
+
+    }
+
+
+    .section-title h2 {
+
+        font-size:
+            45px;
+
+    }
+
+
+    .feature-card {
+
+        min-height:
+            125px;
+
+        padding:
+            22px;
+
+    }
+
+
+    .feature-info h3 {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .feature-info p {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .screens-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            10px;
+
+    }
+
+
+    .screen {
+
+        padding:
+            6px;
+
+        border-radius:
+            12px;
+
+    }
+
+
+    .download-box {
+
+        padding:
+            32px 24px;
+
+    }
+
+
+    .footer-inner {
+
+        min-height:
+            110px;
+
+        flex-direction:
+            column;
+
+        justify-content:
+            center;
+
+        gap:
+            15px;
+
+    }
+
+}
